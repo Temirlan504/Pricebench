@@ -1,0 +1,121 @@
+/* ---------- Tokens ---------- */
+:root {
+  --bg: #eef0ed;
+  --surface: #ffffff;
+  --ink: #14211c;
+  --muted: #5d6a64;
+  --line: #dfe3df;
+  --input-line: #c6ccc8;
+  --green: #0d6652;
+  --green-dark: #0a5242;
+  --green-tint: #f1f8f5;
+  --warn-bg: #fbe5da;
+  --warn-ink: #3b2a22;
+  --bad: #b4421f;
+
+  --font: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+
+  --radius: 6px;
+}
+
+/* ---------- Base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: var(--font);
+    font-size: 12px;
+    line-height: 1.4;
+    color: var(--ink);
+    background: var(--bg);
+}
+
+h1, h2, h3, p, dl, dd { margin: 0; }
+
+a { color: inherit; text-decoration: none; }
+
+input, select, button { font: inherit; color: inherit; }
+
+input {
+    width: 100%;
+    height: 28px;
+    padding: 0 10px;
+    background: var(--surface);
+    border: 1px solid var(--input-line);
+    border-radius: var(--radius);
+}
+
+input.num { text-align: right; font-family: var(--font-mono); }
+
+:focus-visible {
+    outline: 2px solid var(--green);
+    outline-offset: 2px;
+}
+
+.mono { font-family: var(--font-mono); font-weight: 700; }
+.mono--bad { color: var(--bad); }
+.small { font-size: 11px; color: var(--muted); }
+.tiny { font-size: 10px; color: var(--muted); }
+
+/* ---------- Buttons ---------- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-weight: 590;
+    border-radius: var(--radius);
+}
+
+.btn--primary {
+    padding: 0 14px;
+    height: 32px;
+    background: var(--green);
+    color: #fff;
+    border: 0;
+    font-size: 14px;
+}
+.btn--primary:hover { background: var(--green-dark); }
+
+/* ---------- Top bar ---------- */
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    padding: 0 28px;
+    background: var(--surface);
+}
+
+.topbar__left,
+.topbar__right { display: flex; align-items: center; gap: 24px; }
+.topbar__right { gap: 14px; }
+
+.brand { font-size: 20px; font-weight: 700; }
+
+.currency {
+    height: 32px;
+    padding: 0 6px;
+    font-size: 12px;
+    background: var(--surface);
+    border: 1px solid var(--input-line);
+    border-radius: var(--radius);
+}
+
+/* ---------- Page layout ---------- */
+.page {
+    max-width: 900px;
+    margin: 0 10px;
+    padding: 32px;
+}
+
+.intro h1 {
+    font-size: 32px;
+    font-weight: 700;
+}
+.intro p {
+    margin-top: 5px;
+    font-size: 14px;
+    color: var(--muted);
+}
