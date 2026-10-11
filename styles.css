@@ -58,6 +58,12 @@ input.num { text-align: right; font-family: var(--font-mono); }
 .small { font-size: 11px; color: var(--muted); }
 .tiny { font-size: 10px; color: var(--muted); }
 
+hr {
+    margin: 20px 0;
+    border: 0;
+    border-top: 1px solid var(--line);
+}
+
 /* ---------- Buttons ---------- */
 .btn {
     display: inline-flex;
@@ -78,6 +84,22 @@ input.num { text-align: right; font-family: var(--font-mono); }
 }
 .btn--primary:hover { background: var(--green-dark); }
 
+.btn--primary svg {
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.btn--secondary {
+    padding: 0 10px;
+    height: 32px;
+    background: var(--surface);
+    color: var(--green);
+    border: 1px solid var(--line);
+    font-size: 12px;
+    border-radius: 16px;
+}
+.btn--secondary:hover { background: var(--green-tint); }
+
 /* ---------- Top bar ---------- */
 .topbar {
     display: flex;
@@ -92,7 +114,7 @@ input.num { text-align: right; font-family: var(--font-mono); }
 .topbar__right { display: flex; align-items: center; gap: 24px; }
 .topbar__right { gap: 14px; }
 
-.brand { font-size: 20px; font-weight: 700; }
+.brand { font-size: 25px; font-weight: 650; }
 
 .currency {
     height: 32px;
@@ -105,9 +127,9 @@ input.num { text-align: right; font-family: var(--font-mono); }
 
 /* ---------- Page layout ---------- */
 .page {
-    max-width: 900px;
-    margin: 0 10px;
-    padding: 32px;
+    max-width: auto;
+    margin: 0 30px;
+    padding: 32px 128px;
 }
 
 .intro h1 {
@@ -118,4 +140,152 @@ input.num { text-align: right; font-family: var(--font-mono); }
     margin-top: 5px;
     font-size: 14px;
     color: var(--muted);
+}
+
+/* ---------- Calculator layout ---------- */
+.calculator-grid {
+    display: grid;
+    grid-template-columns: 390px 1fr;
+    gap: 30px;
+    margin-top: 28px;
+}
+
+.calculator-box {
+    min-height: 350px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+}
+
+.calculator-box {
+    padding: 24px;
+}
+
+.calculator-box-title {
+    font-size: 17px;
+    font-weight: 650;
+    margin-bottom: 12px;
+}
+
+/* Form fields */
+.form-fields {
+    display: grid;
+    grid-template-columns: 1fr 0.4fr;
+    gap: 16px;
+    margin-bottom: 10px;
+}
+
+.form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-row label {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink);
+}
+
+.form-row input {
+    width: 100%;
+    min-width: 0;
+}
+
+.input-currency {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.input-currency input {
+    flex: 1;
+}
+
+.form-row-currency {
+    font-size: 12px;
+    color: var(--muted);
+    white-space: nowrap;
+}
+
+/* Expense row */
+.expense-row {
+    display: grid;
+    grid-template-columns: 1fr 0.6fr;
+    gap: 16px;
+    margin-bottom: 12px;
+}
+
+/* Input and toggle sit together */
+.amount-control {
+    display: flex;
+    align-items: stretch;
+    gap: 4px;
+}
+
+.amount-control input {
+    flex: 1;
+    min-width: 0;
+}
+
+/* Segmented toggle */
+.amount-toggle {
+    display: flex;
+    padding: 2px;
+    gap: 2px;
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+}
+
+.amount-toggle__option {
+    min-width: 20px;
+    padding: 0 8px;
+    border: 0;
+    border-radius: 4px;
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.amount-toggle__option.is-active {
+    background: var(--surface);
+    color: var(--green);
+    box-shadow: 0 0 0 1px var(--line);
+}
+
+.amount-toggle__option:hover {
+    color: var(--green);
+}
+
+/* Profit margin controls */
+.profit-control {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.profit-control__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.profit-control__label {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.profit-control__input-group {
+    display: flex;
+    align-items: stretch;
+    gap: 6px;
+    width: 175px;
+}
+
+.profit-control__input-group input[type="number"] {
+    flex: 1;
+    min-width: 0;
 }
