@@ -81,7 +81,7 @@
                 <button class="btn btn--secondary">+ Add</button>
                 <hr>
 
-                <h2 class="calculator-box-title">3. Marketplace fees & Ads</h2>
+                <h2 class="calculator-box-title">3. Marketplace fees & Ad expenses</h2>
                 <div class="expense-row">
                     <div class="form-row">
                         <label for="fee-name">Expense name</label>
@@ -164,11 +164,66 @@
                     </svg>
                     Calculate
                 </button>
-
             </div>
 
             <!-- Right box -->
-            <div class="calculator-box"></div>
+            <div class="results-box">
+                <h3 class="results-box__title">Estimated profit</h3>
+
+                <!-- Main profit summary -->
+                <div class="results-summary">
+                    <div class="profit-estimate">
+                        <span class="profit-estimate__value">$23.69</span>
+                        <span class="profit-estimate__currency">CAD</span>
+                    </div>
+
+                    <div class="results-summary__divider"></div>
+
+                    <div class="profit-target">
+                        <span class="profit-target__value">20%</span>
+                        <span class="profit-target__label">Target profit</span>
+                    </div>
+                </div>
+
+                <!-- Suggested selling price -->
+                <p class="suggested-price">
+                    Suggested selling price is
+                    <strong>$116.42.</strong>
+                </p>
+
+                <!-- Supporting metrics -->
+                <div class="results-metrics">
+                    <div class="results-metric">
+                        <span class="results-metric__label">
+                            Break-even price
+                        </span>
+                        <div class="results-metric__value-group">
+                            <span class="results-metric__value">$92.73</span>
+                            <span class="results-metric__currency">CAD</span>
+                        </div>
+                    </div>
+
+                    <div class="results-metric">
+                        <span class="results-metric__label">
+                            Total costs
+                        </span>
+                        <div class="results-metric__value-group">
+                            <span class="results-metric__value">$92.73</span>
+                            <span class="results-metric__currency">CAD</span>
+                        </div>
+                    </div>
+
+                    <div class="results-metric">
+                        <span class="results-metric__label">
+                            Your selling price
+                        </span>
+                        <div class="results-metric__value-group">
+                            <span class="results-metric__value">$116.42</span>
+                            <span class="results-metric__currency">CAD</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 </body>
