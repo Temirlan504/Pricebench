@@ -211,7 +211,7 @@ hr {
 /* Expense row */
 .expense-row {
     display: grid;
-    grid-template-columns: 1fr 0.6fr;
+    grid-template-columns: 1fr 0.73fr;
     gap: 16px;
     margin-bottom: 12px;
 }
@@ -259,6 +259,10 @@ hr {
     color: var(--green);
 }
 
+#parts-list {
+    row-gap: 10px;
+}
+
 /* Profit margin controls */
 .profit-control {
     display: flex;
@@ -282,7 +286,7 @@ hr {
     display: flex;
     align-items: stretch;
     gap: 6px;
-    width: 175px;
+    width: 218px;
 }
 
 .profit-control__input-group input[type="number"] {
