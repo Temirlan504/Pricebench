@@ -1,4 +1,3 @@
-
 const currencySelector = document.querySelector(".currency");
 const partsList = document.querySelector("#parts-list");
 const addPartButton = document.querySelector("#add-part");
@@ -65,13 +64,21 @@ let partCount = 0;
 addPartButton.addEventListener("click", () => {
     partCount++;
 
-    // Create the item name input.
+    const rowWrapper = document.createElement("div");
+    rowWrapper.className = "form-fields";
+
+    const nameRow = document.createElement("div");
+    nameRow.className = "form-row";
+    
     const nameInput = document.createElement("input");
     nameInput.type = "text";
     nameInput.id = `part-name-${partCount}`;
     nameInput.placeholder = "Enter item name";
+    nameRow.appendChild(nameInput);
 
-    // Create the purchase cost input.
+    const costRow = document.createElement("div");
+    costRow.className = "form-row";
+
     const costInput = document.createElement("input");
     costInput.type = "number";
     costInput.id = `part-cost-${partCount}`;
@@ -79,7 +86,6 @@ addPartButton.addEventListener("click", () => {
     costInput.step = "0.01";
     costInput.placeholder = "0.00";
 
-    // Wrap the cost input with its currency label.
     const currencyWrapper = document.createElement("div");
     currencyWrapper.className = "input-currency";
 
@@ -87,12 +93,11 @@ addPartButton.addEventListener("click", () => {
     currencyLabel.className = "form-row-currency";
 
     currencyWrapper.append(costInput, currencyLabel);
+    costRow.appendChild(currencyWrapper);
 
-    // Add both inputs to the existing parts container.
-    partsList.append(nameInput, currencyWrapper);
+    rowWrapper.append(nameRow, costRow);
+    partsList.appendChild(rowWrapper);
 
-    // Apply the currently selected currency symbol.
     updateCurrencyDisplay();
-
     console.log(`Part ${partCount} added.`);
 });
