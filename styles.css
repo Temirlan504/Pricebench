@@ -211,7 +211,7 @@ hr {
 /* Expense row */
 .expense-row {
     display: grid;
-    grid-template-columns: 1fr 0.73fr;
+    grid-template-columns: 1fr 0.6fr;
     gap: 16px;
     margin-bottom: 12px;
 }
@@ -259,10 +259,6 @@ hr {
     color: var(--green);
 }
 
-#parts-list {
-    row-gap: 10px;
-}
-
 /* Profit margin controls */
 .profit-control {
     display: flex;
@@ -286,10 +282,154 @@ hr {
     display: flex;
     align-items: stretch;
     gap: 6px;
-    width: 218px;
+    width: 175px;
 }
 
 .profit-control__input-group input[type="number"] {
     flex: 1;
     min-width: 0;
+}
+
+/* ---------- Results panel ---------- */
+.results-box {
+    min-width: 0;
+    min-height: 350px;
+    padding: 32px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+}
+
+.results-box__title {
+    margin: 0 0 24px;
+    font-size: 15px;
+    font-weight: 650;
+}
+
+/* Main profit and target percentage */
+.results-summary {
+    display: flex;
+    align-items: flex-end;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.results-summary__divider {
+    align-self: stretch;
+    min-height: 44px;
+    width: 1px;
+    background: var(--line);
+    flex-shrink: 0;
+    margin-left: auto;
+}
+
+.profit-estimate {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 8px;
+    min-width: 0;
+}
+
+.profit-estimate__value {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -1.5px;
+    font-variant-numeric: tabular-nums;
+    color: var(--green);
+}
+
+.profit-estimate__currency {
+    font-size: 16px;
+    color: var(--muted);
+}
+
+/* Target profit */
+.profit-target {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    text-align: right;
+}
+
+.profit-target__value {
+    font-size: 20px;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    color: var(--green);
+}
+
+.profit-target__label {
+    font-size: 11px;
+    color: var(--muted);
+    white-space: nowrap;
+}
+
+/* Suggested selling price */
+.suggested-price {
+    font-size: 12px;
+    line-height: 1.6;
+    color: var(--muted);
+    margin-bottom: 28px;
+}
+
+.suggested-price strong {
+    color: var(--ink);
+    font-weight: 600;
+}
+
+/* Three supporting metric cards */
+.results-metrics {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.results-metric {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 0;
+    padding: 16px;
+    background: #f7f9f7;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+}
+
+.results-metric__label {
+    font-size: 12px;
+    line-height: 1.4;
+    color: var(--muted);
+}
+
+.results-metric__value {
+    font-size: 25px;
+    font-weight: 650;
+    overflow-wrap: anywhere;
+    font-variant-numeric: tabular-nums;
+}
+
+.results-metric__currency {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+/* Responsive layout */
+@media (max-width: 700px) {
+    .results-summary {
+        gap: 16px;
+    }
+
+    .profit-estimate__value {
+        font-size: 32px;
+    }
+
+    .results-metrics {
+        grid-template-columns: 1fr;
+    }
+
+    .results-metric {
+        gap: 8px;
+    }
 }
